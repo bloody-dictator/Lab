@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Calculator {
+class Calculator {
     public static ArrayList<Ball> scanningBalls(){
         ArrayList<Ball>listBalls = new ArrayList<>();
         int count = 5;
@@ -30,7 +30,7 @@ public class Calculator {
         return listBalls;
     }
 
-    private static double calculateDynamicViscosity(Ball ball, Liquid liquid, Vessel vessel){
+    protected static double calculateDynamicViscosity(Ball ball, Liquid liquid, Vessel vessel){
         double difference = ball.getDensity() - liquid.getDensityLiquid();
         System.out.println("\np - p1: "+difference);
         double square = Math.pow(ball.getRadius(), 2);
@@ -44,17 +44,19 @@ public class Calculator {
 
     protected static ArrayList<Ball> ballsFromCsv(){
         ArrayList<Ball> resultBallList = new ArrayList<>();
-        ArrayList<String> ballList = CsvReader.reader("/Users/kristina/work/Lab/M11/src/main/resources/ballList.csv");
+        ArrayList<String> ballList = CsvReader.reader("/Users/kristina/work/Lab/M21/src/main/resources/ballList.csv");
         for (String i : ballList){
             List<String> fromcsv = Arrays.asList(i.split(","));
-            resultBallList.add(new Ball(Double.parseDouble(fromcsv.get(0)),
+            resultBallList.add(new Ball(
+                    Double.parseDouble(fromcsv.get(0)),
                     Double.parseDouble(fromcsv.get(1)),
-                    Double.parseDouble(fromcsv.get(2))));
+                    Double.parseDouble(fromcsv.get(2))
+                    ));
         }
         return resultBallList;
     }
 
-    public static ArrayList<Double> calculateResultM11(ArrayList<Ball> ballList, Liquid liquid, Vessel vessel){
+    protected static ArrayList<Double> calculateResultM11(ArrayList<Ball> ballList, Liquid liquid, Vessel vessel){
         ArrayList<Double>results = new ArrayList<>();
         for(Ball i: ballList){
             double result = calculateDynamicViscosity(i, liquid, vessel);
@@ -64,7 +66,7 @@ public class Calculator {
         return results;
     }
 
-    public static ArrayList<Double> getCoefficientK(ArrayList<Ball> ballList, Vessel vessel){
+    protected static ArrayList<Double> getCoefficientK(ArrayList<Ball> ballList, Vessel vessel){
         ArrayList<Double>listKResults = new ArrayList<>();
         for(Ball i: ballList){
             double numerator = 1+ ((2.4*i.getRadius())/vessel.getRadiusVessel());

@@ -1,4 +1,4 @@
-public class Ball {
+class Ball {
     //радиус r шарика
     private double radius;
     //плотность шарика ро греческая
@@ -7,34 +7,34 @@ public class Ball {
     //время движения шарика
     private double time;
 
-    public Ball(){}
-    public Ball(double radius, double density, double time){
+    protected Ball(){}
+    protected Ball(double radius, double density, double time){
         this.time = time;
         this.radius = radius;
         this.density = density;
     }
 
-    public double getDensity() {
+    protected double getDensity() {
         return density;
     }
 
-    public double getRadius() {
+    protected double getRadius() {
         return radius;
     }
 
-    public double getTime() {
+    protected double getTime() {
         return time;
     }
 
-    public void setDensity(double density) {
+    protected void setDensity(double density) {
         this.density = density;
     }
 
-    public void setRadius(double radius) {
+    protected void setRadius(double radius) {
         this.radius = radius;
     }
 
-    public void setTime(double time) {
+    protected void setTime(double time) {
         this.time = time;
     }
 }

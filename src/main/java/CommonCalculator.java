@@ -11,6 +11,16 @@ public class CommonCalculator {
         return middleResult;
     }
 
+    public static Double getMiddleResultFromInt(ArrayList<Integer> result){
+        Integer sum = 0;
+        for(Integer i: result){
+            sum+=i;
+        }
+        double middleResult = Double.valueOf(sum)/result.size();
+        System.out.println("Среднее значение " + middleResult);
+        return middleResult;
+    }
+
     public static ArrayList<Double> getDeviance(ArrayList<Double> result, double middleResult){
         ArrayList<Double> listDeviance = new ArrayList<>();
         for(double i: result){

@@ -5,7 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>M11</module>
+        <module>M21</module>
+        <module>M7b</module>
+        <module>M31</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -13,7 +15,7 @@
     </properties>
 
     <groupId>org.example</groupId>
-    <artifactId>LabM11</artifactId>
+    <artifactId>Lab</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 
