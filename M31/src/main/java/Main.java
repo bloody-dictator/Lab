@@ -11,8 +11,8 @@ public class Main {
         collisionList.forEach((it) -> {
             System.out.println(it.getAngle());
             it.setMiddleTime(CommonCalculator.getMiddleResultFromInt(it.getTimes()));;});
-        collisionList.forEach((it) -> {it.setLengthThread(0.43);
-        it.setMassBall(0.11);
+        collisionList.forEach((it) -> {it.setLengthThread(0.34);
+        it.setMassBall(0.112);
         Collision.calculateV10P10(it);});
     }
 }

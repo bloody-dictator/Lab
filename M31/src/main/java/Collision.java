@@ -70,7 +70,7 @@ class Collision {
             Integer angle = Integer.parseInt(fromCsv.get(0));
             fromCsv.remove(0);
             ArrayList<Integer> times = new ArrayList<>();
-            fromCsv.forEach((it) -> times.add(Integer.parseInt(fromCsv.get(0))));
+            fromCsv.forEach((it) -> times.add(Integer.parseInt(it)));
             listCollision.add(new Collision(angle, times));
         }
         return listCollision;
@@ -90,7 +90,8 @@ class Collision {
         System.out.println("Импульс Р10 "+ P10);
         double E10 = (collision.massBall*(V10*V10))/2;
         System.out.println("Энергия Е10 "+ E10);
-        double F10 = P10/ collision.getMiddleTime();
+        System.out.println("");
+        double F10 = P10/ (collision.getMiddleTime()*Math.pow(10, -4));
         System.out.println("Модуль средней силы F10 "+F10);
     }
 
