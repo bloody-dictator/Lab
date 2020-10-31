@@ -6,12 +6,12 @@ import java.util.ArrayList;
 public class CsvReader {
     public static ArrayList<String> reader(String filePath) {
         ArrayList<String> fromCsvList = new ArrayList<>();
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))){
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
             String line;
-            while ((line = bufferedReader.readLine())!=null){
+            while ((line = bufferedReader.readLine()) != null) {
                 fromCsvList.add(line);
             }
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return fromCsvList;

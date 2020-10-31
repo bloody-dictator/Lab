@@ -10,7 +10,7 @@ public class Main {
         ArrayList<Double> listDeviance = CommonCalculator.getDeviance(viscosityList, middleResult);
         ArrayList<Double> listSquareDeviance = CommonCalculator.getSquareDeviance(listDeviance);
         System.out.println("Случайная погрешность с коэффициентом Стьюдента "+CommonCalculator.getRandomError(listSquareDeviance)*Constants.STUDENT_COEFFICIENTFOR4);
-        ArrayList<Double> koefficients = Calculator.getCoefficientK(ballList, vessel);
-        CommonCalculator.getMiddleResult(koefficients);
+        ArrayList<Double> coefficients = Calculator.getCoefficientK(ballList, vessel);
+        CommonCalculator.getMiddleResult(coefficients);
     }
 }

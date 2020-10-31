@@ -3,7 +3,7 @@ class Vessel {
     private double distanceK1K2;
     private double radiusVessel;
 
-    protected Vessel(double distanceK1K2, double radiusVessel){
+    protected Vessel(double distanceK1K2, double radiusVessel) {
         this.distanceK1K2 = distanceK1K2;
         this.radiusVessel = radiusVessel;
     }

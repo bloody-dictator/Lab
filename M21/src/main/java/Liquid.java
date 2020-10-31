@@ -1,7 +1,7 @@
 class Liquid {
     private double densityLiquid;
 
-    protected Liquid(double densityLiquid){
+    protected Liquid(double densityLiquid) {
         this.densityLiquid = densityLiquid;
     }
 

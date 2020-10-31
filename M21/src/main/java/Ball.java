@@ -7,8 +7,10 @@ class Ball {
     //время движения шарика
     private double time;
 
-    protected Ball(){}
-    protected Ball(double radius, double density, double time){
+    protected Ball() {
+    }
+
+    protected Ball(double radius, double density, double time) {
         this.time = time;
         this.radius = radius;
         this.density = density;
