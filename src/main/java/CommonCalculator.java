@@ -16,7 +16,7 @@ public abstract class CommonCalculator {
         for (Integer i : result) {
             sum += i;
         }
-        double middleResult = Double.valueOf(sum) / result.size();
+        Double middleResult = Double.valueOf(sum) / result.size();
         System.out.println("Среднее значение " + middleResult);
         return middleResult;
     }
@@ -41,14 +41,14 @@ public abstract class CommonCalculator {
         return listSquareDeviance;
     }
 
-    public double getRandomError(ArrayList<Double> squareDevianceList) {
-        double sumSquareDeviance = 0;
+    public Double getRandomError(ArrayList<Double> squareDevianceList) {
+        Double sumSquareDeviance = 0d;
         for (Double i : squareDevianceList) {
             sumSquareDeviance += i;
         }
-        int numerator = squareDevianceList.size() * (squareDevianceList.size() - 1);
+        Integer numerator = squareDevianceList.size() * (squareDevianceList.size() - 1);
         System.out.println("в знаменателе погрешности " + numerator);
-        double randomError = Math.sqrt(sumSquareDeviance / numerator);
+        Double randomError = Math.sqrt(sumSquareDeviance / numerator);
         System.out.println(" Случайная погрешность: " + randomError);
         return randomError;
     }
