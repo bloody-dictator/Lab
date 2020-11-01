@@ -2,11 +2,11 @@ import java.util.ArrayList;
 
 public abstract class CommonCalculator {
     public Double getMiddleResult(ArrayList<Double> result) {
-        double sum = 0;
-        for (double i : result) {
+        Double sum = 0d;
+        for (Double i : result) {
             sum += i;
         }
-        double middleResult = sum / result.size();
+        Double middleResult = sum / result.size();
         System.out.println("Среднее значение " + middleResult);
         return middleResult;
     }
