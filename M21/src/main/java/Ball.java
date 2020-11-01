@@ -7,36 +7,36 @@ class Ball {
     //время движения шарика
     private double time;
 
-    protected Ball() {
+    Ball() {
     }
 
-    protected Ball(double radius, double density, double time) {
+    Ball(double radius, double density, double time) {
         this.time = time;
         this.radius = radius;
         this.density = density;
     }
 
-    protected double getDensity() {
+    double getDensity() {
         return density;
     }
 
-    protected double getRadius() {
+    double getRadius() {
         return radius;
     }
 
-    protected double getTime() {
+    double getTime() {
         return time;
     }
 
-    protected void setDensity(double density) {
+    void setDensity(double density) {
         this.density = density;
     }
 
-    protected void setRadius(double radius) {
+    void setRadius(double radius) {
         this.radius = radius;
     }
 
-    protected void setTime(double time) {
+    void setTime(double time) {
         this.time = time;
     }
 }

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class CsvReader {
-    public static ArrayList<String> reader(String filePath) {
+    public ArrayList<String> reader(String filePath) {
         ArrayList<String> fromCsvList = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
             String line;

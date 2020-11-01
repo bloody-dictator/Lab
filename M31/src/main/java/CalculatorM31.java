@@ -1,5 +1,5 @@
 class CalculatorM31 {
-    protected static void calculateV10P10(Collision collision) {
+    static void calculateV10P10(Collision collision) {
         System.out.println("\nИзмерения для соударения под углом " + collision.getAngle());
         System.out.println("Среднее время соударения " + collision.getMiddleTime());
         System.out.println("Длина нити " + collision.getLengthThread());

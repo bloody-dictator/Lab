@@ -5,11 +5,11 @@ class Liquid {
         this.densityLiquid = densityLiquid;
     }
 
-    protected double getDensityLiquid() {
+    double getDensityLiquid() {
         return densityLiquid;
     }
 
-    protected void setDensityLiquid(double densityLiquid) {
+    void setDensityLiquid(double densityLiquid) {
         this.densityLiquid = densityLiquid;
     }
 }
