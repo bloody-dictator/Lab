@@ -1,4 +1,4 @@
-class CalculatorM31 {
+class CalculatorM31 extends CommonCalculator {
     static void calculateV10P10(Collision collision) {
         System.out.println("\nИзмерения для соударения под углом " + collision.getAngle());
         System.out.println("Среднее время соударения " + collision.getMiddleTime());

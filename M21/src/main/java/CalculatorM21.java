@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class Calculator {
+class CalculatorM21 extends CommonCalculator {
     static double calculateDynamicViscosity(Ball ball, Liquid liquid, Vessel vessel) {
         double difference = ball.getDensity() - liquid.getDensityLiquid();
         System.out.println("\np - p1: " + difference);
