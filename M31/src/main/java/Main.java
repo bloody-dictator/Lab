@@ -7,7 +7,7 @@ public class Main {
         ArrayList<Double> recoveryFactorList = calculatorM31.calculateRecoveryFactor(anglesFi2List);
         calculatorM31.getMiddleResult(recoveryFactorList);
         calculatorM31.getMiddleResult(anglesFi2List);
-        ArrayList<Collision> collisionList = Collision.getTimeCollisionFromCsv();
+        ArrayList<Collision> collisionList = calculatorM31.getTimeCollisionFromCsv();
         collisionList.forEach((it) -> {
             System.out.println(it.getAngle());
             it.setMiddleTime(calculatorM31.getMiddleResultFromInt(it.getTimes()));

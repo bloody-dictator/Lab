@@ -83,20 +83,4 @@ class Collision {
         this.lengthThread = lengthThread;
         this.sqrtGL = Math.sqrt(Constants.GRAVITATIONAL_ACCELERATION * lengthThread);
     }
-
-
-
-    static ArrayList<Collision> getTimeCollisionFromCsv() {
-        ArrayList<Collision> listCollision = new ArrayList<>();
-        ArrayList<String> listTimeCollisionFromCsv = new CsvReader().reader("/Users/kristina/work/Lab/M31/src/main/resources/timeCollision.csv");
-        for (String i : listTimeCollisionFromCsv) {
-            ArrayList<String> fromCsv = new ArrayList<>(Arrays.asList((i.split(","))));
-            Integer angle = Integer.parseInt(fromCsv.get(0));
-            fromCsv.remove(0);
-            ArrayList<Integer> times = new ArrayList<>();
-            fromCsv.forEach((it) -> times.add(Integer.parseInt(it)));
-            listCollision.add(new Collision(angle, times));
-        }
-        return listCollision;
-    }
 }

@@ -53,4 +53,18 @@ class CalculatorM31 extends CommonCalculator {
         }
         return recoveryList;
     }
+
+    ArrayList<Collision> getTimeCollisionFromCsv() {
+        ArrayList<Collision> listCollision = new ArrayList<>();
+        ArrayList<String> listTimeCollisionFromCsv = new CsvReader().reader("/Users/kristina/work/Lab/M31/src/main/resources/timeCollision.csv");
+        for (String i : listTimeCollisionFromCsv) {
+            ArrayList<String> fromCsv = new ArrayList<>(Arrays.asList((i.split(","))));
+            int angle = Integer.parseInt(fromCsv.get(0));
+            fromCsv.remove(0);
+            ArrayList<Integer> times = new ArrayList<>();
+            fromCsv.forEach((it) -> times.add(Integer.parseInt(it)));
+            listCollision.add(new Collision(angle, times));
+        }
+        return listCollision;
+    }
 }

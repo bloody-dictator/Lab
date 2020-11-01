@@ -15,7 +15,7 @@ class CalculatorM21 extends CommonCalculator {
         return numerator / denominator;
     }
 
-    ArrayList<Ball> ballsFromCsv() {
+    ArrayList<Ball> getBallsFromCsv() {
         ArrayList<Ball> resultBallList = new ArrayList<>();
         ArrayList<String> ballList = new CsvReader().reader("/Users/kristina/work/Lab/M21/src/main/resources/ballList.csv");
         for (String i : ballList) {
