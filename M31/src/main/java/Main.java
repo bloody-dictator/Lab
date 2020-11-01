@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Double> anglesFi2List = RecoveryFactor.getAnglesFi2();
-        ArrayList<Double> recoveryFactorList = RecoveryFactor.calculateRecoveryFactor(anglesFi2List);
         CalculatorM31 calculatorM31 = new CalculatorM31();
+        ArrayList<Double> anglesFi2List = calculatorM31.getAnglesFi2();
+        ArrayList<Double> recoveryFactorList = calculatorM31.calculateRecoveryFactor(anglesFi2List);
         calculatorM31.getMiddleResult(recoveryFactorList);
         calculatorM31.getMiddleResult(anglesFi2List);
         ArrayList<Collision> collisionList = Collision.getTimeCollisionFromCsv();
