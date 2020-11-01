@@ -8,14 +8,27 @@ class Collision {
     private double middleTime;
     private double V10;
     private double massBall;
+    private double sqrtGL;
+    private double sinus;
+    private double P10;
 
     Collision(int angle, ArrayList<Integer> times) {
         this.angle = angle;
         this.times = times;
+        double anglesInRadians = Math.toRadians(angle);
+        this.sinus = Math.sin(anglesInRadians / 2);
     }
 
     ArrayList<Integer> getTimes() {
         return times;
+    }
+
+    public double getSinus() {
+        return sinus;
+    }
+
+    public double getSqrtGL() {
+        return sqrtGL;
     }
 
     int getAngle() {
@@ -46,6 +59,14 @@ class Collision {
         V10 = v10;
     }
 
+    public double getP10() {
+        return P10;
+    }
+
+    public void setP10(double p10) {
+        P10 = p10;
+    }
+
     void setTimes(ArrayList<Integer> times) {
         this.times = times;
     }
@@ -60,7 +81,10 @@ class Collision {
 
     void setLengthThread(double lengthThread) {
         this.lengthThread = lengthThread;
+        this.sqrtGL = Math.sqrt(Constants.GRAVITATIONAL_ACCELERATION * lengthThread);
     }
+
+
 
     static ArrayList<Collision> getTimeCollisionFromCsv() {
         ArrayList<Collision> listCollision = new ArrayList<>();

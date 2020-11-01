@@ -2,22 +2,37 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 class CalculatorM31 extends CommonCalculator {
-    void calculateV10P10(Collision collision) {
+    void calculateM31(Collision collision) {
         System.out.println("\nИзмерения для соударения под углом " + collision.getAngle());
         System.out.println("Среднее время соударения " + collision.getMiddleTime());
         System.out.println("Длина нити " + collision.getLengthThread());
-        double anglesInRadians = Math.toRadians(collision.getAngle());
-        double sqrtGL = Math.sqrt(Constants.GRAVITATIONAL_ACCELERATION * collision.getLengthThread());
-        double sinus = Math.sin(anglesInRadians / 2);
-        double V10 = 2 * sqrtGL * sinus;
+        double V10 = this.calculateV10(collision);
         System.out.println("Скорость V10 " + V10);
         collision.setV10(V10);
-        double P10 = 2 * collision.getMassBall() * sqrtGL * sinus;
+        double P10 = this.calculateP10(collision);
+        collision.setP10(P10);
         System.out.println("Импульс Р10 " + P10);
-        double E10 = (collision.getMassBall() * (V10 * V10)) / 2;
+        double E10 = this.calculateE10(collision);
         System.out.println("Энергия Е10 " + E10);
-        double F10 = P10 / (collision.getMiddleTime() * Math.pow(10, -4));
+        double F10 = this.calculateF10(collision);
         System.out.println("Модуль средней силы F10 " + F10);
+    }
+
+    Double calculateV10(Collision collision){
+        return  2 * collision.getSqrtGL() * collision.getSinus();
+    }
+
+    Double calculateP10(Collision collision){
+        return  2 * collision.getMassBall() * collision.getSqrtGL() * collision.getSinus();
+    }
+
+    Double calculateE10(Collision collision){
+        double V10 = collision.getV10();
+        return (collision.getMassBall() * (V10 * V10)) / 2;
+    }
+
+    Double calculateF10(Collision collision){
+        return collision.getP10() / (collision.getMiddleTime() * Math.pow(10, -4));
     }
 
     ArrayList<Double> getAnglesFi2() {

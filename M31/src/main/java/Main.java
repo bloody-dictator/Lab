@@ -13,7 +13,7 @@ public class Main {
             it.setMiddleTime(calculatorM31.getMiddleResultFromInt(it.getTimes()));
             it.setLengthThread(0.34);
             it.setMassBall(0.112);
-            calculatorM31.calculateV10P10(it);
+            calculatorM31.calculateM31(it);
         });
     }
 }
