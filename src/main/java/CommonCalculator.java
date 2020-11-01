@@ -21,10 +21,10 @@ public abstract class CommonCalculator {
         return middleResult;
     }
 
-    public ArrayList<Double> getDeviance(ArrayList<Double> result, double middleResult) {
+    public ArrayList<Double> getDeviance(ArrayList<Double> result, Double middleResult) {
         ArrayList<Double> listDeviance = new ArrayList<>();
-        for (double i : result) {
-            double deviance = i - middleResult;
+        for (Double i : result) {
+            Double deviance = i - middleResult;
             System.out.println("n-<n> " + deviance);
             listDeviance.add(deviance);
         }
@@ -33,8 +33,8 @@ public abstract class CommonCalculator {
 
     public ArrayList<Double> getSquareDeviance(ArrayList<Double> devianceList) {
         ArrayList<Double> listSquareDeviance = new ArrayList<>();
-        for (double i : devianceList) {
-            double squareDeviance = i * i;
+        for (Double i : devianceList) {
+            Double squareDeviance = i * i;
             System.out.println("(n-<n>)^2 " + squareDeviance);
             listSquareDeviance.add(squareDeviance);
         }
@@ -43,7 +43,7 @@ public abstract class CommonCalculator {
 
     public double getRandomError(ArrayList<Double> squareDevianceList) {
         double sumSquareDeviance = 0;
-        for (double i : squareDevianceList) {
+        for (Double i : squareDevianceList) {
             sumSquareDeviance += i;
         }
         int numerator = squareDevianceList.size() * (squareDevianceList.size() - 1);
