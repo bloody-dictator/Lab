@@ -6,7 +6,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>M21</module>
-        <module>M7b</module>
         <module>M31</module>
     </modules>
     <properties>
