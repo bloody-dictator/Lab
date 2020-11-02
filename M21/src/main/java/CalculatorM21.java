@@ -15,9 +15,9 @@ class CalculatorM21 extends CommonCalculator {
         return numerator / denominator;
     }
 
-    ArrayList<Ball> getBallsFromCsv() {
-        ArrayList<Ball> resultBallList = new ArrayList<>();
-        ArrayList<String> ballList = new CsvReader().reader("/Users/kristina/work/Lab/M21/src/main/resources/ballList.csv");
+    List<Ball> getBallsFromCsv() {
+        List<Ball> resultBallList = new ArrayList<>();
+        List<String> ballList = new CsvReader().read("/Users/kristina/work/Lab/M21/src/main/resources/ballList.csv");
         for (String i : ballList) {
             List<String> fromcsv = Arrays.asList(i.split(","));
             resultBallList.add(new Ball(
@@ -29,8 +29,8 @@ class CalculatorM21 extends CommonCalculator {
         return resultBallList;
     }
 
-    ArrayList<Double> calculateResultM11(ArrayList<Ball> ballList, Liquid liquid, Vessel vessel) {
-        ArrayList<Double> results = new ArrayList<>();
+    List<Double> calculateResultM11(List<Ball> ballList, Liquid liquid, Vessel vessel) {
+        List<Double> results = new ArrayList<>();
         for (Ball i : ballList) {
             double result = this.calculateDynamicViscosity(i, liquid, vessel);
             results.add(result);
@@ -39,8 +39,8 @@ class CalculatorM21 extends CommonCalculator {
         return results;
     }
 
-     ArrayList<Double> getCoefficientK(ArrayList<Ball> ballList, Vessel vessel) {
-        ArrayList<Double> listKResults = new ArrayList<>();
+     List<Double> getCoefficientK(List<Ball> ballList, Vessel vessel) {
+        List<Double> listKResults = new ArrayList<>();
         for (Ball i : ballList) {
             double numerator = 1 + ((2.4 * i.getRadius()) / vessel.getRadiusVessel());
             double k = 1 / numerator;

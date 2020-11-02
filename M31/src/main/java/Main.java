@@ -1,13 +1,14 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         CalculatorM31 calculatorM31 = new CalculatorM31();
-        ArrayList<Double> anglesFi2List = calculatorM31.getAnglesFi2();
-        ArrayList<Double> recoveryFactorList = calculatorM31.calculateRecoveryFactor(anglesFi2List);
+        List<Double> anglesFi2List = calculatorM31.getAnglesFi2();
+        List<Double> recoveryFactorList = calculatorM31.calculateRecoveryFactor(anglesFi2List);
         calculatorM31.getMiddleResult(recoveryFactorList);
         calculatorM31.getMiddleResult(anglesFi2List);
-        ArrayList<Collision> collisionList = calculatorM31.getTimeCollisionFromCsv();
+        List<Collision> collisionList = calculatorM31.getTimeCollisionFromCsv();
         collisionList.forEach((it) -> {
             System.out.println(it.getAngle());
             it.setMiddleTime(calculatorM31.getMiddleResultFromInt(it.getTimes()));

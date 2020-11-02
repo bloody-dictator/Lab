@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 class CalculatorM31 extends CommonCalculator {
     void calculateM31(Collision collision) {
@@ -35,17 +36,17 @@ class CalculatorM31 extends CommonCalculator {
         return collision.getP10() / (collision.getMiddleTime() * Math.pow(10, -4));
     }
 
-    ArrayList<Double> getAnglesFi2() {
-        ArrayList<Double> resultList = new ArrayList<>();
-        ArrayList<String> FiFromCsv = new CsvReader().reader("/Users/kristina/work/Lab/M31/src/main/resources/AnglesFi2.csv");
+    List<Double> getAnglesFi2() {
+        List<Double> resultList = new ArrayList<>();
+        List<String> FiFromCsv = new CsvReader().read("/Users/kristina/work/Lab/M31/src/main/resources/AnglesFi2.csv");
         for (String i : FiFromCsv) {
             Arrays.asList(i.split(",")).forEach((it) -> resultList.add(Double.parseDouble(it)));
         }
         return resultList;
     }
 
-    ArrayList<Double> calculateRecoveryFactor(ArrayList<Double> anglesFi2) {
-        ArrayList<Double> recoveryList = new ArrayList<>();
+    List<Double> calculateRecoveryFactor(List<Double> anglesFi2) {
+        List<Double> recoveryList = new ArrayList<>();
         for (double angle : anglesFi2) {
             double K = angle / ConstantsM31.ANGLE_FI_10;
             System.out.println("Коэффициент восстановления для угла " + angle + " равен " + K);
@@ -54,14 +55,14 @@ class CalculatorM31 extends CommonCalculator {
         return recoveryList;
     }
 
-    ArrayList<Collision> getTimeCollisionFromCsv() {
-        ArrayList<Collision> listCollision = new ArrayList<>();
-        ArrayList<String> listTimeCollisionFromCsv = new CsvReader().reader("/Users/kristina/work/Lab/M31/src/main/resources/timeCollision.csv");
+    List<Collision> getTimeCollisionFromCsv() {
+        List<Collision> listCollision = new ArrayList<>();
+        List<String> listTimeCollisionFromCsv = new CsvReader().read("/Users/kristina/work/Lab/M31/src/main/resources/timeCollision.csv");
         for (String i : listTimeCollisionFromCsv) {
-            ArrayList<String> fromCsv = new ArrayList<>(Arrays.asList((i.split(","))));
+            List<String> fromCsv = new ArrayList<>(Arrays.asList((i.split(","))));
             int angle = Integer.parseInt(fromCsv.get(0));
             fromCsv.remove(0);
-            ArrayList<Integer> times = new ArrayList<>();
+            List<Integer> times = new ArrayList<>();
             fromCsv.forEach((it) -> times.add(Integer.parseInt(it)));
             listCollision.add(new Collision(angle, times));
         }

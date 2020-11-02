@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.List;
 
 class Collision {
     private int angle;
-    private ArrayList<Integer> times;
+    private List<Integer> times;
     private double lengthThread;
     private double middleTime;
     private double V10;
@@ -11,14 +12,14 @@ class Collision {
     private double sinus;
     private double P10;
 
-    Collision(int angle, ArrayList<Integer> times) {
+    Collision(int angle, List<Integer> times) {
         this.angle = angle;
         this.times = times;
         double anglesInRadians = Math.toRadians(angle);
         this.sinus = Math.sin(anglesInRadians / 2);
     }
 
-    ArrayList<Integer> getTimes() {
+    List<Integer> getTimes() {
         return times;
     }
 
