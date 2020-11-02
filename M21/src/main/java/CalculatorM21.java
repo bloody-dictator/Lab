@@ -17,7 +17,7 @@ class CalculatorM21 extends CommonCalculator {
 
     List<Ball> getBallsFromCsv() {
         List<Ball> resultBallList = new ArrayList<>();
-        List<String> ballList = new CsvReader().read("/Users/kristina/work/Lab/M21/src/main/resources/ballList.csv");
+        List<String> ballList = new CsvReader().read("ballList.csv");
         for (String i : ballList) {
             List<String> fromcsv = Arrays.asList(i.split(","));
             resultBallList.add(new Ball(

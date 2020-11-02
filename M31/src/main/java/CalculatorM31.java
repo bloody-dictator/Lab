@@ -38,7 +38,7 @@ class CalculatorM31 extends CommonCalculator {
 
     List<Double> getAnglesFi2() {
         List<Double> resultList = new ArrayList<>();
-        List<String> FiFromCsv = new CsvReader().read("/Users/kristina/work/Lab/M31/src/main/resources/AnglesFi2.csv");
+        List<String> FiFromCsv = new CsvReader().read("AnglesFi2.csv");
         for (String i : FiFromCsv) {
             Arrays.asList(i.split(",")).forEach((it) -> resultList.add(Double.parseDouble(it)));
         }
@@ -57,7 +57,7 @@ class CalculatorM31 extends CommonCalculator {
 
     List<Collision> getTimeCollisionFromCsv() {
         List<Collision> listCollision = new ArrayList<>();
-        List<String> listTimeCollisionFromCsv = new CsvReader().read("/Users/kristina/work/Lab/M31/src/main/resources/timeCollision.csv");
+        List<String> listTimeCollisionFromCsv = new CsvReader().read("timeCollision.csv");
         for (String i : listTimeCollisionFromCsv) {
             List<String> fromCsv = new ArrayList<>(Arrays.asList((i.split(","))));
             int angle = Integer.parseInt(fromCsv.get(0));
