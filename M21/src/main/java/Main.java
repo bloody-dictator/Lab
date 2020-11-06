@@ -11,7 +11,7 @@ public class Main {
         List<Double> listDeviance = calculatorM21.getDeviance(viscosityList, middleResult);
         List<Double> listSquareDeviance = calculatorM21.getSquareDeviance(listDeviance);
         System.out.println("Случайная погрешность с коэффициентом Стьюдента "+calculatorM21.getRandomError(listSquareDeviance)*Constants.STUDENT_COEFFICIENTFOR4);
-        List<Double> coefficients = calculatorM21.getCoefficientK(ballList, vessel);
+        List<Double> coefficients = calculatorM21.calculateCoefficientK(ballList, vessel);
         calculatorM21.getMiddleResult(coefficients);
     }
 }

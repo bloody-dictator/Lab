@@ -19,11 +19,11 @@ class CalculatorM21 extends CommonCalculator {
         List<Ball> resultBallList = new ArrayList<>();
         List<String> ballList = new CsvReader().read("ballList.csv");
         for (String i : ballList) {
-            List<String> fromcsv = Arrays.asList(i.split(","));
+            List<String> fromCsv = Arrays.asList(i.split(","));
             resultBallList.add(new Ball(
-                    Double.parseDouble(fromcsv.get(0)),
-                    Double.parseDouble(fromcsv.get(1)),
-                    Double.parseDouble(fromcsv.get(2))
+                    Double.parseDouble(fromCsv.get(0)),
+                    Double.parseDouble(fromCsv.get(1)),
+                    Double.parseDouble(fromCsv.get(2))
             ));
         }
         return resultBallList;
@@ -39,7 +39,7 @@ class CalculatorM21 extends CommonCalculator {
         return results;
     }
 
-     List<Double> getCoefficientK(List<Ball> ballList, Vessel vessel) {
+     List<Double> calculateCoefficientK(List<Ball> ballList, Vessel vessel) {
         List<Double> listKResults = new ArrayList<>();
         for (Ball i : ballList) {
             double numerator = 1 + ((2.4 * i.getRadius()) / vessel.getRadiusVessel());

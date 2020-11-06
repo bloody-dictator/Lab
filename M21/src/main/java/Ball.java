@@ -39,4 +39,9 @@ class Ball {
     void setTime(double time) {
         this.time = time;
     }
+
+    @Override
+    public String toString() {
+        return "Ball[ time: "+ time+"; radius: "+radius+"; density: "+density;
+    }
 }
