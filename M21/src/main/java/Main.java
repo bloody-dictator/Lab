@@ -5,7 +5,7 @@ public class Main {
         Liquid liquid = new Liquid(1260.0);
         Vessel vessel = new Vessel(0.233, 0.032);
         CalculatorM21 calculatorM21 = new CalculatorM21();
-        List<Ball> ballList = calculatorM21.getBallsFromCsv();
+        List<Ball> ballList = calculatorM21.getBallsFromCsv("ballList.csv");
         List<Double> viscosityList = calculatorM21.calculateResultM11(ballList, liquid, vessel);
         double middleResult = calculatorM21.getMiddleResult(viscosityList);
         List<Double> listDeviance = calculatorM21.getDeviance(viscosityList, middleResult);

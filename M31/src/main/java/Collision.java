@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+//класс для соударений
 class Collision {
     private int angle;
     private List<Integer> times;
