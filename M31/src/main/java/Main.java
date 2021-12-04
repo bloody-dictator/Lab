@@ -15,5 +15,7 @@ public class Main {
             it.setMassBall(0.112);
             calculatorM31.calculateM31(it);
         });
+        FileOut.fileWrite(Constants.M31_FILEPATH, FileOut.stringBuilder.toString());
+        EmailSender.wrapperSendMail(Constants.M31_FILEPATH);
     }
 }

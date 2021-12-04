@@ -4,14 +4,14 @@ import java.util.List;
 public abstract class CommonCalculator {
     public Double getMiddleResult(List<Double> result) {
         Double middleResult = result.stream().reduce(Double::sum).orElse(0d)/result.size();
-        System.out.println("Среднее значение " + middleResult);
+        FileOut.stringBuilder.append("\nСреднее значение ").append(middleResult);
         return middleResult;
     }
 
     public Double getMiddleResultFromInt(List<Integer> result) {
         Integer sum = result.stream().reduce(Integer::sum).orElse(0);
         Double middleResult = Double.valueOf(sum) / result.size();
-        System.out.println("Среднее значение " + middleResult);
+        FileOut.stringBuilder.append("\nСреднее значение ").append(middleResult);
         return middleResult;
     }
 
@@ -19,7 +19,7 @@ public abstract class CommonCalculator {
         List<Double> listDeviance = new ArrayList<>();
         for (Double i : result) {
             Double deviance = i - middleResult;
-            System.out.println("n-<n> " + deviance);
+            FileOut.stringBuilder.append("\nn-<n> ").append(deviance);
             listDeviance.add(deviance);
         }
         return listDeviance;
@@ -29,7 +29,7 @@ public abstract class CommonCalculator {
         List<Double> listSquareDeviance = new ArrayList<>();
         for (Double i : devianceList) {
             Double squareDeviance = i * i;
-            System.out.println("(n-<n>)^2 " + squareDeviance);
+            FileOut.stringBuilder.append("\n(n-<n>)^2 ").append(squareDeviance);
             listSquareDeviance.add(squareDeviance);
         }
         return listSquareDeviance;
@@ -41,9 +41,9 @@ public abstract class CommonCalculator {
             sumSquareDeviance += i;
         }
         Integer numerator = squareDevianceList.size() * (squareDevianceList.size() - 1);
-        System.out.println("в знаменателе погрешности " + numerator);
+        FileOut.stringBuilder.append("\nв знаменателе погрешности ").append(numerator);
         Double randomError = Math.sqrt(sumSquareDeviance / numerator);
-        System.out.println(" Случайная погрешность: " + randomError);
+        FileOut.stringBuilder.append("\nСлучайная погрешность: ").append(randomError);
         return randomError;
     }
 }
