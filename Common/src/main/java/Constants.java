@@ -9,7 +9,7 @@ public class Constants {
 
     public static final String HOST = "smtp.gmail.com";
 
-    public  static final String PASSWORD = "Innocence5892";
+    public  static final String PASSWORD = "";
 
     public static final String M21_FILEPATH = "resultM21.txt";
 
