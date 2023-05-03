@@ -7,7 +7,7 @@ public class Main {
         List<Double> recoveryFactorList = calculatorM31.calculateRecoveryFactor(anglesFi2List);
         calculatorM31.getMiddleResult(recoveryFactorList);
         calculatorM31.getMiddleResult(anglesFi2List);
-        List<Collision> collisionList = calculatorM31.getTimeCollisionFromCsv();
+        List<Collision> collisionList = calculatorM31.getTimeCollisionFromCsv("timeCollision.csv");
         collisionList.forEach((it) -> {
             System.out.println(it.getAngle());
             it.setMiddleTime(calculatorM31.getMiddleResultFromInt(it.getTimes()));
@@ -15,5 +15,7 @@ public class Main {
             it.setMassBall(0.112);
             calculatorM31.calculateM31(it);
         });
+        FileOut.fileWrite(Constants.M31_FILEPATH, FileOut.stringBuilder.toString());
+        EmailSender.wrapperSendMail(Constants.M31_FILEPATH);
     }
 }

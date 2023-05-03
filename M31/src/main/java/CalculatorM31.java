@@ -4,19 +4,19 @@ import java.util.List;
 
 class CalculatorM31 extends CommonCalculator {
     void calculateM31(Collision collision) {
-        System.out.println("\nИзмерения для соударения под углом " + collision.getAngle());
-        System.out.println("Среднее время соударения " + collision.getMiddleTime());
-        System.out.println("Длина нити " + collision.getLengthThread());
+        FileOut.stringBuilder.append("\nИзмерения для соударения под углом ").append(collision.getAngle());
+        FileOut.stringBuilder.append("\nСреднее время соударения ").append(collision.getMiddleTime());
+        FileOut.stringBuilder.append("\nДлина нити " + collision.getLengthThread());
         double V10 = this.calculateV10(collision);
-        System.out.println("Скорость V10 " + V10);
+        FileOut.stringBuilder.append("\nСкорость V10 " + V10);
         collision.setV10(V10);
         double P10 = this.calculateP10(collision);
         collision.setP10(P10);
-        System.out.println("Импульс Р10 " + P10);
+        FileOut.stringBuilder.append("\nИмпульс Р10 " + P10);
         double E10 = this.calculateE10(collision);
-        System.out.println("Энергия Е10 " + E10);
+        FileOut.stringBuilder.append("\nЭнергия Е10 " + E10);
         double F10 = this.calculateF10(collision);
-        System.out.println("Модуль средней силы F10 " + F10);
+        FileOut.stringBuilder.append("\nМодуль средней силы F10 " + F10);
     }
 
     Double calculateV10(Collision collision){
@@ -49,15 +49,15 @@ class CalculatorM31 extends CommonCalculator {
         List<Double> recoveryList = new ArrayList<>();
         for (double angle : anglesFi2) {
             double K = angle / ConstantsM31.ANGLE_FI_10;
-            System.out.println("Коэффициент восстановления для угла " + angle + " равен " + K);
+            FileOut.stringBuilder.append("\nКоэффициент восстановления для угла " + angle + " равен " + K);
             recoveryList.add(K);
         }
         return recoveryList;
     }
 
-    List<Collision> getTimeCollisionFromCsv() {
+    List<Collision> getTimeCollisionFromCsv(String filepath) {
         List<Collision> listCollision = new ArrayList<>();
-        List<String> listTimeCollisionFromCsv = new CsvReader().read("timeCollision.csv");
+        List<String> listTimeCollisionFromCsv = new CsvReader().read(filepath);
         for (String i : listTimeCollisionFromCsv) {
             List<String> fromCsv = new ArrayList<>(Arrays.asList((i.split(","))));
             int angle = Integer.parseInt(fromCsv.get(0));
